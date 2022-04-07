@@ -1,0 +1,63 @@
+<html>
+
+	<head>
+		<title>BlackJack</title>
+		<link rel="shortcut icon" type="image/x-icon" href="/application/images/icon.ico">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+		<script src="https://kit.fontawesome.com/b3e438769b.js" crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="/application/stylesheets/forall.css">
+		<link rel="stylesheet" href="/application/stylesheets/profile.css">
+	</head>
+
+	<body>
+		<div class="main">
+			<nav class="nav">
+				<div class="nav__name">
+					<h1>{{ username }}</h1>
+					<h2>cash: {{ cash }} <h2>
+				</div>
+				<ul class="nav__list">
+					<li class="nav__list-item">
+						<a href="/" id="game">Game</a>
+					</li>
+					<li class="nav__list-item" >
+						<a href="/ranking" id="ranking">Ranking</a>
+					</li>
+					<li class="nav__list-item">
+						<a href="/skins" id="skins">Skins</a>
+					</li>
+					<li class="nav__list-item">
+						<a href="/achievements" id="achiev">Achievements</a>
+					</li>
+					<li class="nav__list-item">
+						<a href="/shop" id="shop">Shop</a>
+					</li>
+					<li class="nav__list-item">
+						<a href="/account" id="account">Account</a>
+					</li>
+				</ul>
+				<a href="/logout"><button class="nav__button">Logout</button></a>
+			</nav>
+			{% block content %}
+				<div class="game">
+					<a href="/lobby" class="lobby_link"><button class="game__button-start">Start Game</button></a>
+					{# <div class="game__card">
+						<h3>Won Games</h3><hr></div>
+					<div class="game__card">
+						<h3>Achievements</h3><hr></div>
+				</div> #}
+			{% endblock %}
+
+		</div>
+
+	</body>
+
+{% block active %}
+<script>
+    const page = document.querySelector("#game");
+    page.classList.add("active")
+</script>
+
+{% endblock %}
+
+</html>

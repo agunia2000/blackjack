@@ -1,0 +1,35 @@
+{% extends "profile.html.twig" %}
+{% set username = username %}
+{% set cash = cash %}
+
+{% block content %}
+	<link rel="stylesheet" href="/application/stylesheets/shop.css">
+
+	<div class="shop">
+		<ul class="shop__list">
+			{% for skin in shop_skins %}
+				<li class="shop__list-item">
+					<img class="skin__image" src="{{ skin['path'] }}">
+					<div class="skin__buy">
+						<p class="skin__price">Price:
+							{{ skin['price'] }}$</p>
+						<form method="POST" action='/shop'>
+							<input hidden value="{{ skin['sid'] }}" name="buy">
+							<input type="submit" value="Buy" class="skin__buy-button">
+						</form>
+					</div>
+				</li>
+			{% endfor %}
+			{% if shop_skins|length == 0 %}
+				<h3 class="warning">You have all skins!</h3>
+			{% endif %}
+		</ul>
+	</div>
+{% endblock %}
+{% block active %}
+	<script>
+		const page = document.querySelector("#shop");
+page.classList.add("active")
+	</script>
+
+{% endblock %}

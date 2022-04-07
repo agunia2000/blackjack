@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap');
+:root{
+    --pink: #FE5F75;
+    --orange: #FC9842;
+    --blue: #27216F;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'Ubuntu', sans-serif;
+    background: linear-gradient(63.1deg, #1F1E66 0%, rgba(49, 17, 139, 0.8) 67.09%, rgba(63, 33, 148, 0.7) 98.33%);
+    min-height: 100vh;
+    /* color: #E46536; */
+}
+

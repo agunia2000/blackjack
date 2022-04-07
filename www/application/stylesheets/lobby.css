@@ -1,0 +1,145 @@
+.lobbyPlayers{
+    height: 80%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    width: 100%;
+    /* place-items: center; */
+    grid-gap: 1rem;
+    grid-template-areas: 
+    'card1 card2 card3 card4'
+    'bottom bottom bottom bottom'
+    ;
+}
+
+.playerCard{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(220.55deg, rgba(102, 102, 102, 0.63) -34.12%, rgba(61, 61, 61, 0.83) 38.87%, rgba(0, 0, 0, 0.79) 82.9%);
+    height: 90%;
+    box-shadow: 0px 5px 10px 5px #00000054;
+    border-radius: 10px;
+    margin-top: auto;
+    padding: 1rem;
+}
+
+.playerCard h1{
+    margin-top: 1rem;
+}
+
+.playerCard__wrapper{
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    margin: 1rem 0;
+    width: 60%;
+    /* border: 1px solid red; */
+    color: #fff;
+}
+
+.playerCard__wrapper label{
+    margin-right: 1rem;
+}
+
+.playerNumber{
+    color: #fff;
+    margin-bottom: 0.5rem;
+}
+
+.playerCard:nth-of-type(1){
+    grid-area: card1;
+}
+
+.playerCard:nth-of-type(2){
+    grid-area: card2;
+}
+.playerCard:nth-of-type(3){
+    grid-area: card3;
+}
+.playerCard:nth-of-type(4){
+    grid-area: card4;
+}
+
+.playerCard select, #numberOfDecks{
+    width: 80%;
+    height: 40px;
+    border-radius: 30px;
+    background-color: rgba(37, 37, 37, 0.39);
+    color: #fff;
+    text-align: center;
+   
+}
+
+#numberOfDecks{
+    text-align: center;
+    width: 50%;
+    margin-bottom: 1rem;
+}
+
+.playerCard input{
+
+    width: 80%;
+    height: 40px;
+    text-align: center;
+    border-radius: 30px;
+    margin-bottom: 1rem;
+
+    background-color: rgba(37, 37, 37, 0.39);
+    color: #fff;
+
+}
+
+.canvas{
+    /* margin: auto; */
+    /* padding-left: 7rem; */
+    /* padding-right: 7rem; */
+    width: 100vw;
+    padding: 0 2rem;
+}
+
+.bottomPanel{
+    grid-area: bottom;
+    display: grid;
+    place-items: center;
+    border-radius: 10px;
+    width: 100%;
+    height: fit-content;
+    background: linear-gradient(220.55deg, rgba(102, 102, 102, 0.63) -34.12%, rgba(61, 61, 61, 0.83) 38.87%, rgba(0, 0, 0, 0.79) 82.9%);
+    box-shadow: 0px 5px 10px 5px #00000054;
+    padding: 7rem;
+    margin-top: 1rem;
+}
+
+.plus {
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    height: 100%;
+}
+
+.plus img{
+    margin-top: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+    width: 50%;
+}
+
+
+
+.submit-button{
+    border-radius: 30px;
+    height: 70px;
+    width: 50%;
+    background-color: rgba(37, 37, 37, 0.39);
+    color: #fff;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 2rem;
+}
+
+.submit-button:hover{
+    cursor: pointer;
+}

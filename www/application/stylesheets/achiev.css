@@ -1,0 +1,57 @@
+
+.achiev{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    width: 100%;
+}
+
+.achiev__item{
+    margin-bottom: 1rem;
+    display: flex;
+
+    width: 60%;
+}
+
+.icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 2rem;
+    flex: 1;
+}
+
+.achiev__title{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+
+}
+
+.icon i{
+    font-size: 2rem;
+}
+
+.completed{
+    color: rgb(55, 226, 112) !important;
+}
+
+.uncompleted{
+    color: rgb(206, 47, 47) !important;
+}
+
+.achiev__item-name{
+    color: var(--orange);
+
+}
+
+.achiev__item-progress{
+    color: #fff;
+}
+
+.far{
+    color: #fff;
+}

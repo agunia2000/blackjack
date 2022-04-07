@@ -1,0 +1,141 @@
+<html>
+
+	<head>
+		<title>BlackJack</title>
+		<link rel="shortcut icon" type="image/x-icon" href="/application/images/icon.ico">
+		<link rel="stylesheet" href="/application/stylesheets/forall.css">
+		<link rel="stylesheet" href="/application/stylesheets/lobby.css">
+	</head>
+
+	<body>
+		<div class="canvas">
+			<form class="lobbyPlayers" id='lobbyPlayers' action="game" method="POST">
+				<div class="playerCard" id="player1">
+					<h1 class="playerNumber">Player 1</h1>
+					<div class="playerCard__wrapper">
+						<label for="player1Type">Type</label>
+						<select name="player1Type" id="player1Type">
+							<option value="100">Host</option>
+							<option value="0">Guest</option>
+							<option value="1">Easy Ai</option>
+							<option value="2">Medium Ai</option>
+							<option value="3">Hard Ai</option>
+						</select>
+					</div>
+					<div class="playerCard__wrapper"><label for="player1Type">Name</label><input type="text" name="player1Name" id="player1Name" value="{{username}}"></div>
+					<div class="playerCard__wrapper">
+						<label for="player1Bet">Bet</label>
+						<select name="player1Bet" id="player1Bet">
+							<option value="0">Don`t bet</option>
+							<option value="1">Player1</option>
+							<option value="2">Player2</option>
+							<option value="3">Player3</option>
+							<option value="4">Player4</option>
+						</select>
+					</div>
+					<div class="playerCard__wrapper"><label for="player1BetValue">Bid</label><input type="number" name="player1BetValue" min="5" max="40" id="player1BetValue" required></div>
+				</div>
+
+				<div class="playerCard" id="player2">
+					<h1 class="playerNumber">Player 2</h1>
+					<div class="playerCard__wrapper">
+						<label for="player2Type">Type</label>
+						<select name="player2Type" id="player2Type">
+							<option value="10">User</option>
+							<option value="0">Guest</option>
+							<option value="1">Easy Ai</option>
+							<option value="2">Medium Ai</option>
+							<option value="3">Hard Ai</option>
+						</select>
+					</div>
+					<div class="playerCard__wrapper"><label for="player2Name">Name</label><input type="text" name="player2Name" id="player2Name"></div>
+					<div class="playerCard__wrapper">
+					<label for="player1Bet">Bet</label>
+					<select name="player2Bet" id="player2Bet">
+						<option value="0">Don`t bet</option>
+						<option value="1">Player1</option>
+						<option value="2">Player2</option>
+						<option value="3">Player3</option>
+						<option value="4">Player4</option>
+					</select>
+					</div>
+					<div class="playerCard__wrapper"><label for="player2BetValue">Bid</label><input type="number" name="player2BetValue" min="5" max="40" id="player2BetValue" required></div>
+				</div>
+
+				<div class="playerCard" id="player3">
+					<h1 class="playerNumber">Player 3</h1>
+					{# <div class="plus" id="plus"><img src="/application/images/plus-xxl.png"></div> #}
+					<div class="playerCard__wrapper">
+					<label for="player3Type">Type</label>
+						<select name="player3Type" id="player3Type">
+							<option value="9999"></option>
+							<option value="10">User</option>
+							<option value="0">Guest</option>
+							<option value="1">Easy Ai</option>
+							<option value="2">Medium Ai</option>
+							<option value="3">Hard Ai</option>
+						</select>
+					</div>
+					<div class="playerCard__wrapper">
+					<label for="player3Name">Name</label>
+						<input type="text" name="player3Name" id="player3Name">
+					</div>
+					<div class="playerCard__wrapper">
+					<label for="player3Bet">Bet</label>
+					<select name="player3Bet" id="player3Bet">
+						<option value="0">Don`t bet</option>
+						<option value="1">Player1</option>
+						<option value="2">Player2</option>
+						<option value="3">Player3</option>
+						<option value="4">Player4</option>
+					</select>
+					</div>
+					<div class="playerCard__wrapper">
+					<label for="player3BetValue">Bid</label>
+						<input type="number" name="player3BetValue" min="5" max="40" id="player3BetValue" required>
+					</div>
+				</div>
+
+				<div class="playerCard" id="player4">
+					<h1 class="playerNumber">Player 4</h1>
+					{# <div class="plus" id="plus"><img src="/application/images/plus-xxl.png"></div>
+																														                 #}
+					<div class="playerCard__wrapper">
+					<label for="player4Type">Type</label>
+					<select name="player4Type" id="player4Type">
+						<option value="9999"></option>
+						<option value="10">User</option>
+						<option value="0">Guest</option>
+						<option value="1">Easy Ai</option>
+						<option value="2">Medium Ai</option>
+						<option value="3">Hard Ai</option>
+					</select>
+					</div>
+					<div class="playerCard__wrapper"><label for="player4Name">Name</label><input type="text" name="player4Name" id="player4Name" required></div>
+					<div class="playerCard__wrapper">
+					<label for="player4Bet">Bet</label>
+					<select name="player4Bet" id="player4Bet">
+						<option value="0">Don`t bet</option>
+						<option value="1">Player1</option>
+						<option value="2">Player2</option>
+						<option value="3">Player3</option>
+						<option value="4">Player4</option>
+					</select>
+					</div>
+					<div class="playerCard__wrapper"><label for="player4BetValue">Bid</label><input type="number" name="player4BetValue" min="5" max="40" id="player4BetValue"></div>
+				</div>
+				<div class="bottomPanel">
+					<select name="numberOfDecks" id="numberOfDecks">
+						<option value="1">1 Deck</option>
+						<option value="2">2 Decks</option>
+						<option value="3">3 Decks</option>
+						<option value="0">Unlimited Deck</option>
+					</select>
+					<input type="submit" class="submit-button" value="Start Game" onclick="handleSubmit()">
+				</div>
+			</form>
+		</div>
+		<script src="/application/scripts/lobby.js"></script>
+	</body>
+
+</html>

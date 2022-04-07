@@ -1,0 +1,72 @@
+{% extends "profile.html.twig" %}
+{% set username = username %}
+{% set cash = cash %}
+
+{% block content %}
+	<link rel="stylesheet" href="/application/stylesheets/ranking.css">
+	<div class="wrapper">
+		<table class="statistics">
+			<thead>
+				<tr>
+					<th scope="col">No</th>
+					<th scope="col">Username</th>
+					<th scope="col">Wins</th>
+					<th scope="col">Loses</th>
+					<th scope="col">Games</th>
+					<th scope="col">Efficiency</th>
+					<th scope="col">Drawn cards</th>
+					<th scope="col">Blackjacks</th>
+					<th scope="col">Snake Eyes</th>
+					<th scope="col">Game points</th>
+					<th scope="col">Ranking points</th>
+					<th scope="col">Game seconds</th>
+					<th scope="col">Revenue</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for user in best_users %}
+
+
+					{% if  user['username']  == username %}
+						<tr class="user">
+							<th scope="col">{{ loop.index }}</th>
+							<th scope="col">{{ user['username'] }}</th>
+							<th scope="col">{{ user['wins'] }}</th>
+							<th scope="col">{{ user['failures'] }}</th>
+							<th scope="col">{{ user['games'] }}</th>
+							<th scope="col">{{ user['efficiency'] }}</th>
+							<th scope="col">{{ user['drawnCards'] }}</th>
+							<th scope="col">{{ user['blackjacks'] }}</th>
+							<th scope="col">{{ user['snakeEyes'] }}</th>
+							<th scope="col">{{ user['gamePoints'] }}</th>
+							<th scope="col">{{ user['rankingPoints'] }}</th>
+							<th scope="col">{{ user['gameTime'] }}</th>
+							<th scope="col">{{ user['revenue'] }}</th>
+						</tr>
+					{% else %}
+                        <tr>
+							<th scope="col">{{ loop.index }}</th>
+							<th scope="col">{{ user['username'] }}</th>
+							<th scope="col">{{ user['wins'] }}</th>
+							<th scope="col">{{ user['failures'] }}</th>
+							<th scope="col">{{ user['games'] }}</th>
+							<th scope="col">{{ user['efficiency'] }}</th>
+							<th scope="col">{{ user['drawnCards'] }}</th>
+							<th scope="col">{{ user['blackjacks'] }}</th>
+							<th scope="col">{{ user['snakeEyes'] }}</th>
+							<th scope="col">{{ user['gamePoints'] }}</th>
+							<th scope="col">{{ user['rankingPoints'] }}</th>
+							<th scope="col">{{ user['gameTime'] }}</th>
+							<th scope="col">{{ user['revenue'] }}</th>
+                        </tr>
+
+					{% endif %}
+	
+			{% endfor %}
+		</tbody>
+	</table>
+</div>{% endblock %}{% block active %}
+<script>
+	const page = document.querySelector("#statistics");
+page.classList.add("active")
+</script>{% endblock %}

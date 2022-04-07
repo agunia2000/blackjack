@@ -1,0 +1,34 @@
+
+.wrapper{
+    display: flex;
+    justify-content: center;
+}
+
+.statistics{
+    background: linear-gradient(357.96deg, #FE5F75 1.8%, #FC9842 98.4%);
+    width: 90%;
+    border-radius: 30px;
+    color: var(--blue);
+    overflow: hidden;
+
+}
+
+.statistics thead{
+    font-size: 1.5rem;
+}
+
+.statistics tr th{
+    padding: 0.7rem 0;
+}
+
+.statistics tbody tr{
+    font-size: 1.2rem;
+}
+
+.user{
+    color: rgb(145, 78, 190);
+}
+
+.statistics tr:nth-child(even){
+    background: rgba(0, 0, 0, 0.123);
+}

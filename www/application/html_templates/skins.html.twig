@@ -1,0 +1,52 @@
+{% extends "profile.html.twig" %}
+{% set username = username %}
+{% set cash = cash %}
+
+
+{% block content %}
+	<link rel="stylesheet" href="/application/stylesheets/shop.css">
+	<link rel="stylesheet" href="/application/stylesheets/skins.css">
+    <div class="shop">
+        <ul class="shop__list">
+            {% for skin in user_skins %}
+                {% if skin['is_current'] %}
+                    <a id="changeSkinLink" class="changeSkinLink">
+                        <li class="shop__list-item mySkin">
+                            <img class="skin__image" src="{{ skin['path'] }}">
+                            <div class="skin__buy">
+                                <form method="POST" action='/skins' id="changeSkinForm">
+                                    <input hidden value="{{ skin['sid'] }}" name="current_sid">
+                                    <input hidden type="submit">
+                                </form>
+                            </div>
+                        </li>
+                    </a> 
+                {% else %}
+                    <a id="changeSkinLink" class="changeSkinLink">
+                        <li class="shop__list-item otherSkin">
+                            <img class="skin__image" src="{{ skin['path'] }}">
+                            <div class="skin__buy">
+                            <form method="POST" action='/skins' id="changeSkinForm">
+                                <input hidden value="{{ skin['sid'] }}" name="current_sid">
+                                <input hidden type="submit">
+                            </form>
+                            </div>
+                        </li>
+                    </a>
+                {% endif %}
+            {% endfor %}
+            {% if user_skins|length == 0 %}
+                <h3 class="warning">You don't have any skins!</h3>
+            {% endif %}
+        </ul>
+    </div>
+    <script src="/application/scripts/skins.js"></script>
+{% endblock %}
+{% block active %}
+<script>
+    const page = document.querySelector("#skins");
+    page.classList.add("active")
+</script>
+{% endblock %}
+
+

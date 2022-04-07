@@ -1,0 +1,22 @@
+.mySkin{
+    box-shadow: 0px 0px 10px 10px rgba(146, 109, 214, 0.87);
+}
+
+.changeSkinLink{
+    display: block;
+    margin: 0;
+    padding: 0;
+    width: 150px;
+    height: 200px;
+}
+
+.changeSkinLink:hover{
+
+    cursor: pointer;
+}
+
+.otherSkin{
+    opacity: 50%;
+    box-shadow: 0px 0px 10px 10px rgba(69, 65, 75, 0.644);
+}
+

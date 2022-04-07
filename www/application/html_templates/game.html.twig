@@ -1,0 +1,39 @@
+<html>
+
+	<head>
+		<title>BlackJack</title>
+		<link rel="shortcut icon" type="image/x-icon" href="/application/images/icon.ico">
+		<link rel="stylesheet" href="/application/stylesheets/forall.css">
+		<link rel="stylesheet" href="/application/stylesheets/game.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	</head>
+
+	<body>
+		<div class="board">
+			<div class="game" id='game'>
+            </div>
+			<hr>
+			<div class="operations">
+				<p id="move">Player move:
+				</p>
+				<button class="operations__button" id="newCard">Take New Card</button>
+				<button class="operations__button" id="Pass">Pass</button>
+			</div>
+			<div class="players" id="players">
+
+			</div>
+
+			<div class="endview" id="endview">
+				<div class="endview_box">
+					<p class="winners" id="winners">Winners: </p>
+					<a href="/"><button id="returnButton">Home</button></a>
+					<p class="losers" id="losers">Losers: </p>
+				</div>
+			</div>
+
+
+		</div>
+		<script src="/application/scripts/game.js"></script>
+	</body>
+
+</html>

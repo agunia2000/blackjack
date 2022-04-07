@@ -1,0 +1,65 @@
+{% extends "profile.html.twig" %}
+{% set username = username %}
+{% set cash = cash %}
+
+{% block content %}
+<link rel="stylesheet" href="/application/stylesheets/achiev.css">
+<div class="wrapper">
+    <ul class="achiev">
+        {% for achievement in user_achievements %}
+        <li class="achiev__item">
+           <div class="achiev__title">
+                <h2 class="achiev__item-name">{{ achievement['name'] }}</h2>
+                {% if achievement['criterion'] == 'wins' %}
+                    <p class="achiev__item-progress">Games Won: {{ achievement['points'] }}/{{ achievement['threshold'] }}</p>
+                {% elseif achievement['criterion'] == 'drawnCards' %}
+                    <p class="achiev__item-progress">Cards Drawn: {{ achievement['points'] }}/{{ achievement['threshold'] }}</p>
+                {% elseif achievement['criterion'] == 'blackjacks' %}
+                    <p class="achiev__item-progress">Number of Blackjacks: {{ achievement['points'] }}/{{ achievement['threshold'] }}</p>
+                {% elseif achievement['criterion'] == 'snakeEyes' %}
+                    <p class="achiev__item-progress">Number of Persian Eyes: {{ achievement['points'] }}/{{ achievement['threshold'] }}</p>
+                {% elseif achievement['criterion'] == 'gamePoints' %}
+                    <p class="achiev__item-progress">Total Points: {{ achievement['points'] }}/{{ achievement['threshold'] }}</p>
+                {% elseif achievement['criterion'] == 'rankingPoints' %}
+                    <p class="achiev__item-progress">Ranking Points: {{ achievement['points'] }}/{{ achievement['threshold'] }}</p>
+                {% elseif achievement['criterion'] == 'revenue' %}
+                    <p class="achiev__item-progress">Total Money Obtained: {{ achievement['points'] }}/{{ achievement['threshold'] }}</p>
+                {% endif %}
+            </div>
+            <div class="icon"><i class="far fa-check-circle completed"></i></div>
+        </li>
+        {% endfor %}
+        {% for achievement in other_achievements %} 
+            <li class="achiev__item">
+                <div class="achiev__title">
+                <h2 class="achiev__item-name">{{ achievement['name'] }}</h2>
+                {% if achievement['criterion'] == 'wins' %}
+                    <p class="achiev__item-progress">Games Won: {{ achievement['points'] }}/{{ achievement['threshold'] }}</p>
+                {% elseif achievement['criterion'] == 'drawnCards' %}
+                    <p class="achiev__item-progress">Cards Drawn: {{ achievement['points'] }}/{{ achievement['threshold'] }}</p>
+                {% elseif achievement['criterion'] == 'blackjacks' %}
+                    <p class="achiev__item-progress">Number of Blackjacks: {{ achievement['points'] }}/{{ achievement['threshold'] }}</p>
+                {% elseif achievement['criterion'] == 'snakeEyes' %}
+                    <p class="achiev__item-progress">Number of Persian Eyes: {{ achievement['points'] }}/{{ achievement['threshold'] }}</p>
+                {% elseif achievement['criterion'] == 'gamePoints' %}
+                    <p class="achiev__item-progress">Total Points: {{ achievement['points'] }}/{{ achievement['threshold'] }}</p>
+                {% elseif achievement['criterion'] == 'rankingPoints' %}
+                    <p class="achiev__item-progress">Ranking Points: {{ achievement['points'] }}/{{ achievement['threshold'] }}</p>
+                {% elseif achievement['criterion'] == 'revenue' %}
+                    <p class="achiev__item-progress">Total Money Obtained: {{ achievement['points'] }}/{{ achievement['threshold'] }}</p>
+                {% endif %}
+            </div>
+            <div class="icon"><i class="far fa-times-circle uncompleted"></i></div>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+
+{% endblock %}
+{% block active %}
+<script>
+    const page = document.querySelector("#achiev");
+    page.classList.add("active")
+</script>
+
+{% endblock %}
